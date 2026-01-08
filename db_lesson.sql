@@ -7,16 +7,10 @@ create table `departments`(
 );
 
 Q2
-ALTER TABLE departments
-MODIFY `updated_at` DATETIME
-DEFAULT CURRENT_TIMESTAMP
-ON UPDATE CURRENT_TIMESTAMP;
-
-ALTER TABLE departments MODIFY `department_id`INT UNSIGNED NOT NULL AUTO_INCREMENT
-
-ALTER TABLE people ADD department_id INT unsigned AFTER email;
-
-ALTER TABLE people MODIFY department_id INT(10) unsigned;
+ALTER TABLE people 
+ADD `department_id` 
+INT unsigned NULL
+AFTER email;
 
 Q3
 部署追加
@@ -91,7 +85,7 @@ FROM people
 WHERE
  (age BETWEEN 20 AND 29 AND gender = 2)
  OR
- (age BETWEEN 40 AND 39 AND gender = 1);
+ (age BETWEEN 40 AND 49 AND gender = 1);
 
 Q8
 SELECT name
